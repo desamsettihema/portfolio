@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+
+    <style>
+        body{
+            background:#111827;
+            color:white;
+            font-family:Arial,sans-serif;
+            padding:40px;
+        }
+
+        h1{
+            color:#00d9ff;
+            text-align:center;
+        }
+
+        pre{
+            background:#1e293b;
+            padding:20px;
+            border-radius:10px;
+            overflow-x:auto;
+            font-size:15px;
+        }
+
+        a{
+            display:inline-block;
+            margin-top:20px;
+            padding:12px 25px;
+            background:#00d9ff;
+            color:black;
+            text-decoration:none;
+            border-radius:8px;
+            font-weight:bold;
+        }
+
+        a:hover{
+            background:white;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Number Guessing Game</h1>
+
+<pre><code>
+import java.util.Random;
+import java.util.Scanner;
+
+public class NumberGuessingGame {
+
+    public static void main(String[] args) {
+
+        Random random = new Random();
+        Scanner sc = new Scanner(System.in);
+
+        int number = random.nextInt(100) + 1;
+        int guess = 0;
+        int attempts = 0;
+
+        System.out.println("Welcome to Number Guessing Game!");
+
+        while (guess != number) {
+
+            System.out.print("Enter your guess: ");
+            guess = sc.nextInt();
+            attempts++;
+
+            if (guess > number) {
+                System.out.println("Too High!");
+            }
+            else if (guess < number) {
+                System.out.println("Too Low!");
+            }
+            else {
+                System.out.println("Congratulations!");
+                System.out.println("Correct Number: " + number);
+                System.out.println("Attempts: " + attempts);
+            }
+        }
+
+        sc.close();
+    }
+}
+</code></pre>
+
+<a href="index.html">← Back to Portfolio</a>
+
+</body>
+</html>
